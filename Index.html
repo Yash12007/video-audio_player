@@ -1,0 +1,181 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Video-Audio Player</title>
+
+    <link rel="ico#06cdff#4a00ffn" href="https://raw.githubusercontent.com/Yash12007/Max/main/Max_AI.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  </head>
+
+  <style>
+
+    .btn{
+
+      color: cyan;
+
+      background: black;
+
+      border-color: cyan;
+
+    }
+
+    .input{
+
+      background: black;
+
+      color: cyan;
+
+      border-color: cyan;
+
+      border-radius: 30px;
+
+      height: 30px;
+
+      width: 500px;
+
+    }
+
+    body{
+
+      background-color: black;
+
+    }
+
+    h1{
+
+      background:black; 
+
+      color:cyan;
+
+    }
+
+    b{
+
+      color:white;
+
+    }
+
+  </style>
+
+  <body>
+
+    <nav>
+
+      <ul>
+
+        <a href="" class="btn">Home</a>
+
+        <a href="https://yash12007.github.io/Max/#about" class="btn">About</a>
+
+      </ul>
+
+    </nav>
+
+    <div id="ul">
+
+      <h1>Video-Audio Player</h1>
+
+      <b>Choose What do you want to play</b>
+
+      <a href="#music-box" class="btn" onclick="musiconly()">Music</a>
+
+      <a href="#vidbox" class="btn" onclick="Videoonly()">Video</a>
+
+    </div>
+
+    <div id="music-box">
+
+      <input type="text" id="mpath" class="input" placeholder="Enter your song path. Ex: storage/emulated/0/download/1.mp3">
+
+      <button class="btn" onclick="playmusic()">play</button>
+
+      <a href="" class="btn">Restart</a>
+
+    </div>
+
+    <div id="vidbox">
+
+      <video autoplay controls id="video" width="500px" height="200px"></video>
+
+      <input type="text" id="path" class="input" placeholder="Enter your Video path. Ex: storage/emulated/0/download/1.mp4">
+
+      <button onclick="playvideo()" class="btn">play</button>
+
+      <a href="" class="btn">Restart</a>
+
+    </div>
+
+    </div>
+
+  </body>
+
+  <script>
+
+    var musicbox = document.getElementById("music-box")
+
+    musicbox.setAttribute("style", "opacity:0;");
+
+    
+
+    var video = document.getElementById("video")
+
+    video.setAttribute("style", "opacity:0;");
+
+    
+
+    var vid = document.getElementById("vidbox")
+
+    vid.setAttribute("style", "opacity:0;");
+
+    
+
+    function musiconly(){
+
+      var ul = document.getElementById("ul").setAttribute("style", "opacity:0;")
+
+      musicbox.setAttribute("style", "opacity:1;")
+
+    }
+
+    function Videoonly(){
+
+      var ul = document.getElementById("ul").setAttribute("style", "opacity:0;")
+
+      vid.setAttribute("style", "opacity:1;")
+
+    }
+
+    function playmusic(){
+
+      var input = document.getElementById("mpath").value;
+
+      var audio = new Audio("file:///"+input);
+
+      audio.play();
+
+    }
+
+    function playvideo(){
+
+      var video = document.getElementById("video");
+
+      var input = document.getElementById("path").value;
+
+      video.setAttribute("style", "opacity:1;");
+
+      video.src="file:///"+input;
+
+    }
+
+  </script>
+
+ </html>
